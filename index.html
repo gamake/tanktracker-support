@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tank Tracker - Support & Hilfe</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -25,7 +21,6 @@
             padding: 20px;
         }
 
-        /* Header mit solidem Blau */
         header {
             background: #0066cc;
             padding: 50px 30px;
@@ -36,46 +31,69 @@
             color: white;
         }
 
+        header .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
         header h1 {
+            color: white;
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         header p {
+            color: rgba(255,255,255,0.95);
             font-size: 1em;
-            opacity: 0.95;
             font-weight: 500;
         }
 
-        /* Info Box */
-        .info-box {
+        .info-box, .faq-container, .contact-section, footer {
             background: white;
-            padding: 20px 25px;
             border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .info-box {
+            padding: 20px 25px;
             margin-bottom: 30px;
             border-left: 4px solid #0066cc;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        .info-box h2 {
+        .info-box h2, .contact-section h2 {
             color: #0066cc;
             margin-bottom: 10px;
-            font-size: 1.2em;
         }
 
-        .info-box p {
-            color: #555;
-            line-height: 1.7;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        /* FAQ Section */
-        .faq-container {
+        .feature {
             background: white;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 3px solid #0066cc;
+        }
+
+        .feature-icon {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            color: #0066cc;
+            font-size: 0.95em;
+        }
+
+        .faq-container {
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
         }
 
@@ -89,15 +107,10 @@
 
         .faq-item {
             border-bottom: 1px solid #eef0f5;
-            transition: background 0.3s ease;
         }
 
         .faq-item:last-child {
             border-bottom: none;
-        }
-
-        .faq-item:hover {
-            background: #f9fafb;
         }
 
         .faq-question {
@@ -107,11 +120,11 @@
             padding: 20px 25px;
             cursor: pointer;
             user-select: none;
-            transition: all 0.3s ease;
         }
 
         .faq-question:hover {
             color: #0066cc;
+            background: #f9fafb;
         }
 
         .faq-question h3 {
@@ -122,10 +135,9 @@
         }
 
         .faq-toggle {
-            font-size: 1.5em;
             color: #0066cc;
-            transition: transform 0.3s ease;
             margin-left: 15px;
+            transition: transform 0.3s ease;
         }
 
         .faq-item.active .faq-toggle {
@@ -134,9 +146,8 @@
 
         .faq-answer {
             display: none;
-            padding: 0 25px 20px 25px;
+            padding: 0 25px 20px;
             color: #555;
-            line-height: 1.7;
             background: #f9fafb;
             border-top: 1px solid #eef0f5;
         }
@@ -145,20 +156,9 @@
             display: block;
         }
 
-        /* Contact Section */
         .contact-section {
-            background: white;
             padding: 30px 25px;
-            border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .contact-section h2 {
-            color: #0066cc;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            font-weight: 700;
         }
 
         .contact-method {
@@ -170,17 +170,11 @@
             margin-bottom: 12px;
             text-decoration: none;
             color: #333;
-            transition: all 0.3s ease;
             border-left: 4px solid #0066cc;
-        }
-
-        .contact-method:last-child {
-            margin-bottom: 0;
         }
 
         .contact-method:hover {
             background: #eef5fb;
-            transform: translateX(5px);
         }
 
         .contact-icon {
@@ -190,241 +184,273 @@
         }
 
         .contact-text h3 {
-            margin: 0;
-            font-size: 1em;
             color: #0066cc;
-            font-weight: 600;
+            font-size: 1em;
         }
 
         .contact-text p {
-            margin: 3px 0 0 0;
-            font-size: 0.9em;
             color: #777;
+            font-size: 0.9em;
         }
 
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .feature {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-top: 3px solid #0066cc;
-        }
-
-        .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .feature h3 {
-            color: #0066cc;
-            font-size: 0.95em;
-            font-weight: 600;
-        }
-
-        /* Footer */
         footer {
-            background: white;
             padding: 20px;
-            border-radius: 15px;
             text-align: center;
             color: #888;
             font-size: 0.9em;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        footer p {
-            margin: 5px 0;
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
         }
 
-        /* Responsive */
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .contact-method {
-                flex-wrap: wrap;
-            }
-
-            .contact-icon {
-                margin-bottom: 10px;
-                width: 100%;
-            }
+            header h1 { font-size: 1.8em; }
+            .container { padding: 14px; }
+            .contact-method { align-items: flex-start; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div style="font-size: 60px; margin-bottom: 20px;">⛽</div>
-            <h1 style="color: white; font-weight: 700;">Tank Tracker</h1>
-            <p style="color: rgba(255,255,255,0.95);">Dein Tankverbrauch immer im Blick</p>
-        </header>
+<div class="container">
+    <header>
+        <div class="icon">⛽</div>
+        <h1>Tank Tracker</h1>
+        <p>Tankungen, Verbrauch, Fahrzeugkosten und Spritpreise in Österreich im Blick</p>
+    </header>
 
-        <div class="info-box">
-            <h2>Willkommen im Tank Tracker Support</h2>
-            <p>Tank Tracker ist deine Begleiter zur genauen Verfolgung deines Kraftstoffverbrauchs. Mit automatischen Tankstellenpreisen aus Österreich, detaillierten Statistiken und einer interaktiven Karte behältst du alle Kosten im Blick.</p>
-        </div>
-
-
-
-        <div class="faq-container">
-            <div class="faq-title">❓ Häufig gestellte Fragen</div>
-
-            <div class="faq-item active">
-                <div class="faq-question">
-                    <h3>Wie starte ich meine erste Tankung?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Tippe auf das „+" Symbol und wähle „Tanken". Gib die Anzahl Liter, den Preis pro Liter und deinen Kilometerstand ein. Tank Tracker berechnet automatisch deine Gesamtkosten und speichert die Tankung.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Wie aktiviere ich die Standortberechtigung?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Gehe auf deinem iPhone zu Einstellungen → Tank Tracker → Standort und wähle „Bei Nutzung" oder „Immer erlaubt". Dann werden deine Tankstellen-Standorte automatisch gespeichert.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Wie funktioniert die Tankstellen-Suche?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Beim Tanken zeigt die App automatisch die 8-10 nächsten Tankstellen in deiner Umgebung mit Live-Preisen. Du kannst auch manuell einen anderen Standort wählen um Tankstellen in dieser Region zu sehen.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Wie werden die Tankstellen-Preise aktualisiert?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Tank Tracker ruft die Preise über die E-Control API ab. Diese zeigt die aktuellen Kraftstoffpreise von Tankstellen in Österreich in Echtzeit an.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Kann ich Tankstellen als Favoriten speichern?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Ja! In der Karte kannst du deine Lieblings-Tankstellen markieren und im „Favoriten" Tab schnell darauf zugreifen.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Wie wird mein Verbrauch berechnet?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Der Verbrauch wird in L/100km berechnet: (Summe getankte Liter ÷ gefahrene Kilometer) × 100. Du brauchst mindestens 2 Tankeinträge mit gültigen Kilometerständen für die Statistiken.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Kann ich meine Tankungen auf der Karte sehen?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Ja! In der Karte siehst du deine Tankstellen und Favoriten. Du kannst auch einen benutzerdefinierten Standort wählen um andere Regionen zu erkunden.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Wie sichere ich meine Daten?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Tippe auf das Menü-Symbol und wähle „Sichern" um deine Daten zu exportieren. Du kannst mehrere Optionen auswählen und die Datei lokal in einem Ordner speichern. So hast du ein Backup deiner Daten.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Wie lösche ich einen Tankvorgang?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Gehe zum „Tanken" Tab, tippe oben links auf „Bearbeiten" und wähle die Einträge aus die du löschen möchtest. Tippe dann auf „Löschen" um sie zu entfernen.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Ich habe einen Bug gefunden - was nun?</h3>
-                    <span class="faq-toggle">▼</span>
-                </div>
-                <div class="faq-answer">
-                    Schreib uns eine E-Mail an tanktracker@gmx.net mit einer genauen Beschreibung des Problems. Bitte gib auch dein iPhone-Modell und die iOS-Version an. Wir kümmern uns darum!
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <h2>📞 Kontakt & Support</h2>
-            
-            <a href="mailto:tanktracker@gmx.net" class="contact-method">
-                <div class="contact-icon">📧</div>
-                <div class="contact-text">
-                    <h3>E-Mail Support</h3>
-                    <p>tanktracker@gmx.net</p>
-                </div>
-            </a>
-
-            <a href="https://apps.apple.com" target="_blank" class="contact-method">
-                <div class="contact-icon">⭐</div>
-                <div class="contact-text">
-                    <h3>App Store Bewertung</h3>
-                    <p>Deine Bewertung hilft uns sehr!</p>
-                </div>
-            </a>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 Tank Tracker by Herbert Zenz</p>
-            <p>Made with ❤️ for Austrian Drivers</p>
-        </footer>
+    <div class="info-box">
+        <h2>Willkommen im Tank Tracker Support</h2>
+        <p>Tank Tracker hilft dir, Tankungen, Verbrauch, Fahrzeuge, Kosten, Favoriten-Tankstellen und aktuelle österreichische Spritpreise übersichtlich zu verwalten. Mit Dashboard, Karte, Widgets, Backups und optionalem iCloud-Sync behältst du deine Daten auf iPhone und iPad im Blick.</p>
     </div>
 
-    <script>
-        // FAQ Akkordeon
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const item = this.parentElement;
-                const wasActive = item.classList.contains('active');
-                
-                // Alle Items schließen
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                });
-                
-                // Nur das geklickte Item wieder öffnen wenn es vorher nicht offen war
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Verbrauch & Statistiken</h3>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🗺️</div>
+            <h3>Tankstellen & Karte</h3>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⭐</div>
+            <h3>Favoriten & Widgets</h3>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">☁️</div>
+            <h3>Backup & iCloud-Sync</h3>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-title">❓ Häufig gestellte Fragen</div>
+
+        <div class="faq-item active">
+            <div class="faq-question">
+                <h3>Wie starte ich meine erste Tankung?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Öffne den Tab „Tanken“ und gib Liter, Preis pro Liter, Kilometerstand und Fahrzeug ein. Tank Tracker berechnet automatisch die Gesamtkosten und nutzt die Daten später für Verbrauch und Statistiken.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie funktioniert die Tankstellen-Suche?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Tank Tracker zeigt Tankstellen in deiner Umgebung mit verfügbaren Preisen aus Österreich. Du kannst auch manuell einen anderen Standort wählen, um Preise in einer anderen Region zu prüfen.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Woher kommen die Spritpreise?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Die Preise stammen aus dem österreichischen E-Control/Spritpreis-Kontext. Tank Tracker zeigt verfügbare Preise und kennzeichnet, ob ein Preis bestätigt, nur letzter bekannter Stand oder derzeit nicht verfügbar ist.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Was bedeutet „Bestätigt“ oder „Stand HH:mm“?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                „Bestätigt“ bedeutet, dass der Preisstand als aktuell bewertet wird. „Stand HH:mm“ bedeutet, dass noch der letzte bekannte Preis angezeigt wird. Rund um die österreichische 12:00-Uhr-Preisregel wird das bewusst klar markiert.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Kann ich Tankstellen als Favoriten speichern?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Ja. Du kannst Tankstellen als Favoriten markieren und sie im Favoritenbereich, Dashboard oder Widget schneller wiederfinden.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie funktioniert das Widget?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Das Widget zeigt ausgewählte Favoriten und deren Preisstatus. Je nach Widget-Größe werden Preise, Zeitstand und Hinweise kompakt dargestellt. Stationen ohne nutzbaren Preis können ausgeblendet oder zusammengefasst werden.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie wird mein Verbrauch berechnet?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Der Verbrauch wird in L/100 km berechnet: getankte Liter ÷ gefahrene Kilometer × 100. Für belastbare Werte brauchst du mindestens zwei Tankungen mit gültigen Kilometerständen für dasselbe Fahrzeug.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Unterstützt Tank Tracker mehrere Fahrzeuge?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Ja. Du kannst mehrere Fahrzeuge verwalten, Tankungen zuordnen, Fahrzeugkosten erfassen und Statistiken pro Fahrzeug betrachten.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie sichere ich meine Daten?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Du kannst deine Daten über die Backup-/Export-Funktion sichern. Die Exportdatei kannst du lokal speichern oder außerhalb der App aufbewahren. Ein Backup ist besonders sinnvoll, bevor du Geräte wechselst oder größere Änderungen machst.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Gibt es iCloud-Sync?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Ja. iCloud-Sync kann deine Daten zwischen Geräten synchronisieren. Nach Neuinstallation oder Gerätewechsel kann es kurz dauern, bis alle Daten vollständig geladen sind. Lass die App dafür kurz geöffnet.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Was muss ich bei Backup und iCloud beachten?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Ein lokaler Backup-Import und aktiver iCloud-Sync sollten nicht unüberlegt kombiniert werden. Tank Tracker schützt dich deshalb in bestimmten Situationen und erklärt die nächsten Schritte, damit keine doppelten oder unerwarteten Datenstände entstehen.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Was passiert nach einem lokalen Restore?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Nach einem lokalen Restore kann Tank Tracker in einen Schutzmodus wechseln. Du kannst dann bewusst entscheiden, ob du lokal weiterarbeitest, zum bestehenden iCloud-Bestand zurückkehrst oder einen Cloud-Bestand kontrolliert ersetzen möchtest.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Ich habe ein neues Gerät. Was soll ich tun?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Wenn du iCloud-Sync nutzt, installiere Tank Tracker, melde dich mit derselben Apple-ID an und lasse die App kurz geöffnet. Warte, bis der iCloud-Status fertig ist, bevor du Backups importierst oder größere Änderungen machst.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie ändere ich die Standortberechtigung?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Öffne iOS Einstellungen → Tank Tracker → Standort. Dort kannst du den Zugriff erlauben, einschränken oder deaktivieren. Ohne Standort kannst du weiterhin manuell suchen und Tankungen verwalten.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Ich habe einen Bug gefunden. Was nun?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Schreib eine E-Mail an tanktracker@gmx.net mit einer kurzen Beschreibung, deinem iPhone- oder iPad-Modell, iOS-Version und möglichst den Schritten, mit denen der Fehler auftritt.
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>📞 Kontakt & Support</h2>
+
+        <a href="mailto:tanktracker@gmx.net" class="contact-method">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+                <h3>E-Mail Support</h3>
+                <p>tanktracker@gmx.net</p>
+            </div>
+        </a>
+
+        <a href="privacy.html" class="contact-method">
+            <div class="contact-icon">🔒</div>
+            <div class="contact-text">
+                <h3>Datenschutz</h3>
+                <p>Informationen zu Daten, iCloud-Sync, Backup und externen Diensten</p>
+            </div>
+        </a>
+
+        <a href="https://apps.apple.com" target="_blank" class="contact-method">
+            <div class="contact-icon">⭐</div>
+            <div class="contact-text">
+                <h3>App Store Bewertung</h3>
+                <p>Deine Bewertung hilft bei der Weiterentwicklung</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tank Tracker by Herbert Zenz</p>
+        <p>Made for Austrian drivers</p>
+    </footer>
+</div>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+            const item = this.parentElement;
+            const wasActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
             });
+
+            if (!wasActive) {
+                item.classList.add('active');
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
