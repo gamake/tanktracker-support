@@ -152,6 +152,10 @@
             border-top: 1px solid #eef0f5;
         }
 
+        .faq-answer p { margin-top: 12px; }
+        .faq-answer ul { margin: 10px 0 0 20px; }
+        .faq-answer li { margin-bottom: 6px; }
+
         .faq-item.active .faq-answer {
             display: block;
         }
@@ -226,7 +230,7 @@
 
     <div class="info-box">
         <h2>Willkommen im Tank Tracker Support</h2>
-        <p>Tank Tracker hilft dir, Tankungen, Verbrauch, Fahrzeuge, Kosten, Favoriten-Tankstellen und aktuelle österreichische Spritpreise übersichtlich zu verwalten. Mit Dashboard, Karte, Widgets, Backups und optionalem iCloud-Sync behältst du deine Daten auf iPhone und iPad im Blick.</p>
+        <p>Tank Tracker hilft dir, Tankungen, Verbrauch, Fahrzeuge, Kosten, Favoriten-Tankstellen und aktuelle österreichische Spritpreise übersichtlich zu verwalten. Mit Dashboard, Preisvergleich, Preis-Alarmen, Fahrtplanung, Erinnerungen, Widgets, Backups und optionalem iCloud-Sync behältst du alles auf iPhone und iPad im Blick.</p>
     </div>
 
     <div class="features">
@@ -235,12 +239,16 @@
             <h3>Verbrauch & Statistiken</h3>
         </div>
         <div class="feature">
-            <div class="feature-icon">🗺️</div>
-            <h3>Tankstellen & Karte</h3>
-        </div>
-        <div class="feature">
             <div class="feature-icon">⭐</div>
             <h3>Favoriten & Widgets</h3>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🔔</div>
+            <h3>Preis-Alarme & Erinnerungen</h3>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🗺️</div>
+            <h3>Route, Tankfahrt & Fahrtkosten</h3>
         </div>
         <div class="feature">
             <div class="feature-icon">☁️</div>
@@ -253,21 +261,31 @@
 
         <div class="faq-item active">
             <div class="faq-question">
-                <h3>Wie starte ich meine erste Tankung?</h3>
+                <h3>Wie starte ich?</h3>
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Öffne den Tab „Tanken“ und gib Liter, Preis pro Liter, Kilometerstand und Fahrzeug ein. Tank Tracker berechnet automatisch die Gesamtkosten und nutzt die Daten später für Verbrauch und Statistiken.
+                Beim ersten Start führt dich eine kurze Einführung durch die wichtigsten Schritte: Fahrzeug anlegen, Lieblingstankstellen als Favoriten hinzufügen und Berechtigungen für Standort und Mitteilungen erteilen. Du kannst die Einführung jederzeit unter „Mehr“ → „Einführung ansehen“ erneut öffnen.
             </div>
         </div>
 
         <div class="faq-item">
             <div class="faq-question">
-                <h3>Wie funktioniert die Tankstellen-Suche?</h3>
+                <h3>Wie erfasse ich eine Tankung?</h3>
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Tank Tracker zeigt Tankstellen in deiner Umgebung mit verfügbaren Preisen aus Österreich. Du kannst auch manuell einen anderen Standort wählen, um Preise in einer anderen Region zu prüfen.
+                Öffne den Tab „Tanken“ und tippe auf „+“. Gib Liter, Preis pro Liter, Kilometerstand und Fahrzeug ein und wähle, ob du voll getankt hast. Tank Tracker berechnet automatisch die Gesamtkosten und nutzt die Daten für Verbrauch und Statistiken. Einen Eintrag kannst du antippen, um ihn zu bearbeiten, oder nach links wischen, um ihn zu löschen.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie füge ich Tankstellen als Favoriten hinzu?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Im Tab „Favoriten“ kannst du Tankstellen in deiner Umgebung oder über die Suche bzw. Karte hinzufügen. Favoriten erscheinen im Dashboard, im Preisvergleich und – wenn du es pro Favorit einschaltest – im Widget. Tank Tracker aktualisiert ihre Preise automatisch mehrmals täglich.
             </div>
         </div>
 
@@ -277,37 +295,56 @@
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Die Preise stammen aus dem österreichischen E-Control/Spritpreis-Kontext. Tank Tracker zeigt verfügbare Preise und kennzeichnet, ob ein Preis bestätigt, nur letzter bekannter Stand oder derzeit nicht verfügbar ist.
+                Die Preise stammen aus dem <a href="https://www.spritpreisrechner.at" target="_blank">Spritpreisrechner der E-Control</a>: Tankstellen in Österreich melden ihre Preise an die Preistransparenzdatenbank. Tank Tracker ist kein Angebot der E-Control; für Richtigkeit und Aktualität der Preise wird keine Gewähr übernommen.
             </div>
         </div>
 
         <div class="faq-item">
             <div class="faq-question">
-                <h3>Was bedeutet „Bestätigt“ oder „Stand HH:mm“?</h3>
+                <h3>Was bedeuten die Farben und „Bestätigt“ bzw. „Stand“?</h3>
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                „Bestätigt“ bedeutet, dass der Preisstand als aktuell bewertet wird. „Stand HH:mm“ bedeutet, dass noch der letzte bekannte Preis angezeigt wird. Rund um die österreichische 12:00-Uhr-Preisregel wird das bewusst klar markiert.
+                <ul>
+                    <li><strong>Grün – „Bestätigt 12:57“:</strong> Der Preis wurde bei der letzten Abfrage bestätigt.</li>
+                    <li><strong>Orange – „Stand 11:56“:</strong> Der Preis kann sich inzwischen geändert haben – er ist älter als 90 Minuten, stammt von vor der Mittags-Erhöhung um 12 Uhr oder war bei der letzten Abfrage nicht dabei.</li>
+                    <li><strong>Grau – alter Stand oder „--€“:</strong> Die Station meldet gerade keinen Preis (z. B. nachts geschlossen) oder der Preis ist älter als 24 Stunden.</li>
+                </ul>
+                <p>In Österreich dürfen Spritpreise nur einmal täglich um 12 Uhr steigen. Preise von vor 12 Uhr können daher am Nachmittag schon teurer sein.</p>
             </div>
         </div>
 
         <div class="faq-item">
             <div class="faq-question">
-                <h3>Kann ich Tankstellen als Favoriten speichern?</h3>
+                <h3>Wie funktionieren Preis-Alarme?</h3>
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Ja. Du kannst Tankstellen als Favoriten markieren und sie im Favoritenbereich, Dashboard oder Widget schneller wiederfinden.
+                Unter „Mehr“ → „Preis-Alarme“ wählst du einen Favoriten, die Kraftstoffart und deinen Zielpreis. Sobald eine Preisaktualisierung den Zielpreis erreicht oder unterschreitet, bekommst du eine Mitteilung – höchstens einmal pro Tag und Alarm. Dafür müssen Mitteilungen für Tank Tracker erlaubt sein.
             </div>
         </div>
 
         <div class="faq-item">
             <div class="faq-question">
-                <h3>Wie funktioniert das Widget?</h3>
+                <h3>Was kann ich im Tab „Planen“ machen?</h3>
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Das Widget zeigt ausgewählte Favoriten und deren Preisstatus. Je nach Widget-Größe werden Preise, Zeitstand und Hinweise kompakt dargestellt. Stationen ohne nutzbaren Preis können ausgeblendet oder zusammengefasst werden.
+                <ul>
+                    <li><strong>Route:</strong> Start und Ziel eingeben und die günstigsten Tankstellen entlang der Strecke finden.</li>
+                    <li><strong>Tankfahrt:</strong> Prüfen, ob sich ein Umweg zu einer günstigeren Tankstelle in der Nähe lohnt – Ersparnis minus Fahrtkosten für Hin- und Rückweg.</li>
+                    <li><strong>Fahrtkosten:</strong> Spritkosten für eine Strecke mit deinem Fahrzeug abschätzen, einfach oder hin und zurück.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie werde ich an Service und Pickerl erinnert?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Unter „Mehr“ → „Fahrzeuge“ kannst du pro Fahrzeug das nächste Service und die nächste §57a-Überprüfung („Pickerl“) samt Uhrzeit eintragen. Tank Tracker erinnert dich 14 Tage vorher und am Fälligkeitstag.
             </div>
         </div>
 
@@ -317,7 +354,17 @@
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Der Verbrauch wird in L/100 km berechnet: getankte Liter ÷ gefahrene Kilometer × 100. Für belastbare Werte brauchst du mindestens zwei Tankungen mit gültigen Kilometerständen für dasselbe Fahrzeug.
+                Tank Tracker rechnet nach der Volltank-Methode: Liter aller Tankungen seit der letzten Volltankung ÷ gefahrene Kilometer seit dieser × 100 = L/100 km. Einen Wert gibt es daher ab der zweiten Volltankung mit gültigem Kilometerstand für dasselbe Fahrzeug. Nach einer Teilbetankung erscheint der Wert mit der nächsten Volltankung.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Wie funktioniert das Widget?</h3>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Das Widget gibt es in mehreren Größen und zeigt die Favoriten, die du dafür eingeschaltet hast, mit Preis und Status in denselben Farben wie in der App. Es holt die Preise selbst und aktualisiert sich mehrmals täglich; wann genau, entscheidet iOS. Wenn du die App öffnest, werden alle Widgets auf den neuesten Stand gebracht. Stationen ohne nutzbaren Preis werden zusammengefasst als „X ohne Preis“ angezeigt.
             </div>
         </div>
 
@@ -327,7 +374,7 @@
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Ja. Du kannst mehrere Fahrzeuge verwalten, Tankungen zuordnen, Fahrzeugkosten erfassen und Statistiken pro Fahrzeug betrachten.
+                Ja. Du kannst mehrere Fahrzeuge verwalten, Tankungen zuordnen, Fahrzeugkosten erfassen und Statistiken pro Fahrzeug betrachten. Im Dashboard wechselst du das Fahrzeug durch seitliches Wischen. Unter „Tanken“ → „Fahrzeugkosten“ kannst du außerdem einen Monats- oder Jahresbericht als PDF erstellen.
             </div>
         </div>
 
@@ -347,7 +394,7 @@
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Ja. iCloud-Sync kann deine Daten zwischen Geräten synchronisieren. Nach Neuinstallation oder Gerätewechsel kann es kurz dauern, bis alle Daten vollständig geladen sind. Lass die App dafür kurz geöffnet.
+                Ja. iCloud-Sync kann deine Daten zwischen Geräten synchronisieren. Nach Neuinstallation oder Gerätewechsel kann es kurz dauern, bis alle Daten vollständig geladen sind. Lass die App dafür kurz geöffnet. Wenn du den Sync in der App ein- oder ausschaltest, wird die Änderung nach einem Neustart der App wirksam.
             </div>
         </div>
 
@@ -383,11 +430,11 @@
 
         <div class="faq-item">
             <div class="faq-question">
-                <h3>Wie ändere ich die Standortberechtigung?</h3>
+                <h3>Wie ändere ich Standort- oder Mitteilungsberechtigungen?</h3>
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Öffne iOS Einstellungen → Tank Tracker → Standort. Dort kannst du den Zugriff erlauben, einschränken oder deaktivieren. Ohne Standort kannst du weiterhin manuell suchen und Tankungen verwalten.
+                Öffne iOS Einstellungen → Tank Tracker. Unter „Standort“ und „Mitteilungen“ kannst du den Zugriff erlauben, einschränken oder deaktivieren. Ohne Standort kannst du weiterhin manuell nach Tankstellen suchen und Tankungen verwalten; ohne Mitteilungen gibt es keine Preis-Alarme und Erinnerungen.
             </div>
         </div>
 
@@ -397,7 +444,7 @@
                 <span class="faq-toggle">▼</span>
             </div>
             <div class="faq-answer">
-                Schreib eine E-Mail an tanktracker@gmx.net mit einer kurzen Beschreibung, deinem iPhone- oder iPad-Modell, iOS-Version und möglichst den Schritten, mit denen der Fehler auftritt.
+                Schreib eine E-Mail an <a href="mailto:tanktracker@gmx.net">tanktracker@gmx.net</a> mit einer kurzen Beschreibung, deinem iPhone- oder iPad-Modell, der iOS-Version, der App-Version (unter „Mehr“ → „Über TankTracker“) und möglichst den Schritten, mit denen der Fehler auftritt. Ein Screenshot hilft oft sehr.
             </div>
         </div>
     </div>
@@ -413,7 +460,7 @@
             </div>
         </a>
 
-       <a href="datenschutz.html" class="contact-method">
+        <a href="datenschutz.html" class="contact-method">
             <div class="contact-icon">🔒</div>
             <div class="contact-text">
                 <h3>Datenschutz</h3>
@@ -421,7 +468,7 @@
             </div>
         </a>
 
-        <a href="https://apps.apple.com" target="_blank" class="contact-method">
+        <a href="https://apps.apple.com/at/app/tanktracker-tankkosten/id6755633810?action=write-review" target="_blank" class="contact-method">
             <div class="contact-icon">⭐</div>
             <div class="contact-text">
                 <h3>App Store Bewertung</h3>
@@ -432,6 +479,7 @@
 
     <footer>
         <p>&copy; 2026 Tank Tracker by Herbert Zenz</p>
+        <p>Preisdaten: <a href="https://www.spritpreisrechner.at" target="_blank">Spritpreisrechner der E-Control</a> · keine Gewähr</p>
         <p>Made for Austrian drivers</p>
     </footer>
 </div>
