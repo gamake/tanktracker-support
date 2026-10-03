@@ -53,11 +53,11 @@
 <body>
 <div class="container">
     <h1>🔒 Datenschutzrichtlinie</h1>
-    <p class="subtitle">Tank Tracker - Mai 2026</p>
+    <p class="subtitle">Tank Tracker - Oktober 2026</p>
 
     <div class="section">
         <h2>1. Allgemeines</h2>
-        <p>Tank Tracker ist eine iOS-App zur Verwaltung von Tankungen, Fahrzeugen, Fahrzeugkosten, Favoriten-Tankstellen, Preisverläufen, Widgets und optionalem iCloud-Sync. Diese Datenschutzrichtlinie erklärt, welche Daten verarbeitet werden und wofür sie verwendet werden.</p>
+        <p>Tank Tracker ist eine iOS-App zur Verwaltung von Tankungen, Fahrzeugen, Fahrzeugkosten, Favoriten-Tankstellen, Preisverläufen, Preis-Alarmen, Erinnerungen, Fahrtplanung, Widgets und optionalem iCloud-Sync. Diese Datenschutzrichtlinie erklärt, welche Daten verarbeitet werden und wofür sie verwendet werden.</p>
         <div class="highlight">
             <strong>Verantwortlicher:</strong><br>
             Herbert Zenz<br>
@@ -70,18 +70,20 @@
 
         <h3>2.1 Standortdaten</h3>
         <ul>
-            <li>Aktueller Standort zur Suche nahegelegener Tankstellen</li>
+            <li>Aktueller Standort zur Suche nahegelegener Tankstellen (nur während der Nutzung der App)</li>
             <li>Koordinaten ausgewählter oder gespeicherter Tankstellen</li>
             <li>Manuell gewählte Suchstandorte, wenn du eine andere Region prüfst</li>
+            <li>Start, Ziel und Streckenpunkte, wenn du im Bereich „Planen“ eine Route, Tankfahrt oder Fahrtkosten berechnest</li>
             <li>Die Standortberechtigung ist optional und kann jederzeit in iOS deaktiviert werden</li>
         </ul>
 
         <h3>2.2 Tank-, Fahrzeug- und Kostendaten</h3>
         <ul>
             <li>Tankeinträge wie Datum, Liter, Preis, Kilometerstand und Tankart</li>
-            <li>Fahrzeuge und fahrzeugbezogene Angaben</li>
-            <li>Fahrzeugkosten, Service- oder Terminangaben, sofern du sie einträgst</li>
-            <li>Favoriten-Tankstellen und Widget-Sichtbarkeit</li>
+            <li>Fahrzeuge und fahrzeugbezogene Angaben wie Name, Kraftstoff, Kennzeichen, Service- und Pickerl-Termine</li>
+            <li>Fahrzeugkosten, sofern du sie einträgst</li>
+            <li>Favoriten-Tankstellen sowie deren Anzeige in Preisvergleich und Widget</li>
+            <li>Preis-Alarme mit Tankstelle, Kraftstoffart und Zielpreis</li>
             <li>Preisverläufe und lokale Preisstatus-Informationen</li>
         </ul>
 
@@ -97,6 +99,13 @@
             <li>Wenn du uns per E-Mail kontaktierst, verarbeiten wir die von dir gesendeten Informationen</li>
             <li>Dazu können Fehlerbeschreibung, Gerätetyp, iOS-Version oder freiwillig gesendete Screenshots gehören</li>
         </ul>
+
+        <h3>2.5 Mitteilungen</h3>
+        <ul>
+            <li>Preis-Alarme sowie Service- und Pickerl-Erinnerungen werden als lokale Mitteilungen auf deinem Gerät geplant</li>
+            <li>Dafür werden keine Daten an einen Server von Tank Tracker gesendet</li>
+            <li>Die Mitteilungsberechtigung ist optional und kann jederzeit in iOS geändert werden</li>
+        </ul>
     </div>
 
     <div class="section">
@@ -107,6 +116,8 @@
             <li><span class="check">✓</span> Anzeige von Tankstellen und Spritpreisen in Österreich</li>
             <li><span class="check">✓</span> Berechnung von Verbrauch, Kosten und Statistiken</li>
             <li><span class="check">✓</span> Anzeige deiner Favoriten in App und Widget</li>
+            <li><span class="check">✓</span> Preis-Alarme und Erinnerungen an Service- und Pickerl-Termine</li>
+            <li><span class="check">✓</span> Planen: Tankstellen entlang einer Route, Bewertung von Tankfahrten, Fahrtkosten</li>
             <li><span class="check">✓</span> Backup, Import und Restore deiner Daten</li>
             <li><span class="check">✓</span> Optionaler iCloud-Sync zwischen deinen Geräten</li>
             <li><span class="check">✓</span> Fehleranalyse, wenn du Support kontaktierst</li>
@@ -118,6 +129,7 @@
             <li><span class="cross">✗</span> Keine Werbung basierend auf deinen Tankdaten</li>
             <li><span class="cross">✗</span> Kein Tracking über andere Apps oder Webseiten hinweg</li>
             <li><span class="cross">✗</span> Keine eigenen Analyse- oder Werbe-SDKs</li>
+            <li><span class="cross">✗</span> Kein eigener Server: Tank Tracker betreibt keinen Server, an den deine App-Daten gesendet werden</li>
         </ul>
     </div>
 
@@ -126,7 +138,7 @@
 
         <h3>Lokal auf deinem Gerät</h3>
         <ul>
-            <li><span class="check">✓</span> Tankungen, Fahrzeuge, Favoriten, Preisverläufe und Einstellungen werden lokal in der App gespeichert</li>
+            <li><span class="check">✓</span> Tankungen, Fahrzeuge, Favoriten, Preis-Alarme, Preisverläufe und Einstellungen werden lokal in der App gespeichert</li>
             <li><span class="check">✓</span> Widgets nutzen einen gemeinsamen App-Group-Speicher, damit App und Widget Daten austauschen können</li>
             <li><span class="check">✓</span> Lokale Daten werden durch die Sicherheitsmechanismen von iOS geschützt</li>
         </ul>
@@ -134,7 +146,7 @@
         <h3>Optional: iCloud / CloudKit</h3>
         <ul>
             <li><span class="check">✓</span> Wenn iCloud-Sync aktiviert ist, werden synchronisierbare App-Daten über Apples iCloud/CloudKit zwischen deinen Geräten synchronisiert</li>
-            <li><span class="check">✓</span> Die Daten liegen dabei in einem iCloud-Container der App und unterliegen den iCloud- und Apple-Datenschutzbedingungen</li>
+            <li><span class="check">✓</span> Die Daten liegen dabei in deinem privaten iCloud-Bereich im Container der App und unterliegen den iCloud- und Apple-Datenschutzbedingungen</li>
             <li><span class="check">✓</span> Du kannst iCloud-Sync in der App bzw. über iOS/iCloud-Einstellungen steuern</li>
             <li><span class="check">✓</span> Nach Deaktivierung oder Restore kann Tank Tracker besondere Schutz- und Hinweiszustände anzeigen, um doppelte oder unerwartete Datenstände zu vermeiden</li>
         </ul>
@@ -152,9 +164,18 @@
         <h3>E-Control / Spritpreisrechner Österreich</h3>
         <ul>
             <li><strong>Zweck:</strong> Abruf von Tankstellen und Kraftstoffpreisen in Österreich</li>
-            <li><strong>Übermittelte Daten:</strong> Suchkoordinaten, Kraftstoffart und Suchradius</li>
-            <li><strong>Hinweis:</strong> Die Preise stammen aus dem österreichischen Spritpreis-Kontext und öffentlichen E-Control-Datenquellen</li>
-            <li><strong>Website:</strong> <a href="https://www.e-control.at/spritpreisrechner" target="_blank">https://www.e-control.at/spritpreisrechner</a></li>
+            <li><strong>Übermittelte Daten:</strong> Suchkoordinaten (bei Routen mehrere Punkte entlang der Strecke), Kraftstoffart und Suchradius</li>
+            <li><strong>Automatische Abfragen:</strong> App und Widget aktualisieren die Preise deiner Favoriten mehrmals täglich, auch im Hintergrund</li>
+            <li><strong>Hinweis:</strong> Die Preise stammen aus der Preistransparenzdatenbank der E-Control. Tank Tracker ist kein Angebot der E-Control; für Richtigkeit und Aktualität der Preise wird keine Gewähr übernommen</li>
+            <li><strong>Website:</strong> <a href="https://www.spritpreisrechner.at" target="_blank">https://www.spritpreisrechner.at</a></li>
+        </ul>
+
+        <h3>Apple Karten (MapKit)</h3>
+        <ul>
+            <li><strong>Zweck:</strong> Kartendarstellung, Routenberechnung, Adresssuche und Ermittlung von Ortsnamen</li>
+            <li><strong>Übermittelte Daten:</strong> Start, Ziel, eingegebene Adressen und Koordinaten an Apple</li>
+            <li><strong>Anbieter:</strong> Apple</li>
+            <li><strong>Website:</strong> <a href="https://www.apple.com/legal/privacy/data/de/apple-maps/" target="_blank">Apple Karten &amp; Datenschutz</a></li>
         </ul>
 
         <h3>Apple iCloud / CloudKit</h3>
@@ -186,14 +207,14 @@
 
         <h3>Berichtigung und Löschung</h3>
         <ul>
-            <li>Du kannst Tankeinträge, Fahrzeuge, Favoriten und Kosten in der App bearbeiten oder löschen.</li>
+            <li>Du kannst Tankeinträge, Fahrzeuge, Favoriten, Preis-Alarme und Kosten in der App bearbeiten oder löschen.</li>
             <li>Du kannst lokale Daten durch Löschen der App entfernen.</li>
             <li>Wenn iCloud-Sync aktiv ist, können gelöschte oder geänderte Daten auch auf anderen Geräten synchronisiert werden.</li>
             <li>iCloud-Daten kannst du zusätzlich über Apple/iCloud-Funktionen und appinterne Sync-/Restore-Funktionen verwalten.</li>
         </ul>
 
-        <h3>Standortberechtigung</h3>
-        <p>Du kannst die Standortberechtigung jederzeit unter <strong>iOS Einstellungen → Tank Tracker → Standort</strong> ändern oder deaktivieren.</p>
+        <h3>Berechtigungen</h3>
+        <p>Standort und Mitteilungen kannst du jederzeit unter <strong>iOS Einstellungen → Tank Tracker</strong> ändern oder deaktivieren. Die App funktioniert dann eingeschränkt weiter, zum Beispiel ohne Suche in deiner Nähe oder ohne Erinnerungen.</p>
     </div>
 
     <div class="section">
@@ -201,6 +222,7 @@
         <ul>
             <li><span class="check">✓</span> Lokale Speicherung innerhalb der iOS-App-Sandbox</li>
             <li><span class="check">✓</span> Nutzung von iOS- und iCloud-Sicherheitsmechanismen</li>
+            <li><span class="check">✓</span> Verschlüsselte Verbindungen (HTTPS) zu externen Diensten</li>
             <li><span class="check">✓</span> Keine eigenen Werbe- oder Tracking-Dienste</li>
             <li><span class="check">✓</span> Backup- und Restore-Hinweise zur Vermeidung unbeabsichtigter Datenkonflikte</li>
         </ul>
@@ -220,7 +242,7 @@
     </div>
 
     <footer>
-        <p>Tank Tracker verwendet keine Werbe- oder Tracking-SDKs. Deine App-Daten bleiben lokal oder, falls aktiviert, in deinem iCloud-Sync.</p>
+        <p>Tank Tracker verwendet keine Werbe- oder Tracking-SDKs. Deine App-Daten bleiben lokal oder, falls aktiviert, in deinem iCloud-Sync. Für Preise und Karten werden die oben genannten Dienste von E-Control und Apple genutzt.</p>
     </footer>
 </div>
 </body>
